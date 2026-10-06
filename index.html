@@ -1,252 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Font Merger | Bangla Font Studio</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Font Merger | Bangla + English</title>
 <style>
-*{box-sizing:border-box}
-:root{
-  --green:#079447;--green2:#00a653;--light:#edf8f3;
-  --border:#91cdb2;--text:#18211d;--muted:#68736e
-}
-body{
-  margin:0;min-height:100vh;
-  font-family:"Noto Sans Bengali","Hind Siliguri",system-ui,sans-serif;
-  background:linear-gradient(135deg,#f3fbf7,#e5f5ee);
-  color:var(--text);
-}
-.page{width:min(900px,calc(100% - 28px));margin:38px auto 55px}
-.header{
-  min-height:210px;border-radius:42px;
-  background:linear-gradient(135deg,#0a9a50,#008c48);
-  color:#fff;padding:42px 48px;display:flex;align-items:center;gap:30px;
-  position:relative;overflow:hidden;box-shadow:0 18px 40px #07944722;
-}
-.header:before{
-  content:"";position:absolute;inset:0;opacity:.13;
-  background-image:radial-gradient(#fff 1.5px,transparent 1.5px);
-  background-size:34px 34px;
-}
-.logo{
-  width:122px;height:122px;border:2px solid #ffffff55;border-radius:30px;
-  background:#ffffff12;display:grid;place-items:center;position:relative;z-index:1;
-  flex:none;
-}
-.logo svg{width:65px;height:65px;stroke:#fff}
-.header h1{margin:0;font-size:clamp(36px,6vw,55px);font-weight:500;letter-spacing:-1px;position:relative;z-index:1}
-.decor{position:absolute;right:-30px;top:-35px;width:240px;height:240px;border:18px solid #ffffff16;border-radius:55px;transform:rotate(-10deg)}
-.decor:after{content:"";position:absolute;width:130px;height:130px;border:15px solid #ffffff14;border-radius:38px;right:-85px;bottom:-100px}
-.card{
-  margin-top:42px;background:#fff;border:1px solid #dce8e2;border-radius:38px;
-  padding:40px;box-shadow:0 14px 45px #174e3920
-}
-.drop{
-  min-height:330px;border:3px dashed var(--border);border-radius:30px;background:var(--light);
-  display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;
-  transition:.2s;padding:25px;position:relative
-}
-.drop:hover,.drop.drag{background:#e1f4eb;border-color:var(--green);transform:translateY(-2px)}
-.drop.loaded{border-style:solid;border-color:#56ad85}
-.drop input{display:none}
-.inner{display:flex;flex-direction:column;align-items:center;gap:18px;max-width:90%}
-.uploadIcon{width:70px;height:70px;stroke:var(--green);stroke-width:2.8;fill:none}
-.dropTitle{font-size:clamp(22px,4vw,31px);font-weight:500}
-.fileName{font-size:16px;color:var(--green);font-weight:700;word-break:break-all}
-.fileMeta{font-size:14px;color:var(--muted)}
-.plus{height:125px;display:grid;place-items:center;font-size:56px;color:#626b67;font-weight:300}
-.actions{text-align:center;margin-top:32px}
-.merge{
-  border:0;border-radius:24px;background:linear-gradient(135deg,#079447,#009c4d);
-  color:#fff;padding:20px 48px;font:600 25px inherit;cursor:pointer;
-  box-shadow:0 12px 25px #07944738;transition:.2s
-}
-.merge:hover{transform:translateY(-2px);box-shadow:0 16px 30px #07944745}
-.merge:disabled{opacity:.5;cursor:not-allowed;transform:none}
-.status{
-  display:none;margin-top:28px;padding:18px 20px;border-radius:18px;
-  background:#eff8f3;border:1px solid #c6e5d5;color:#215c40;text-align:center;line-height:1.7
-}
-.status.show{display:block}
-.status.error{background:#fff1f1;border-color:#f1c4c4;color:#9b2424}
-.result{display:none;margin-top:28px;text-align:center;padding:25px;border-radius:22px;background:#f6fbf8}
-.result.show{display:block}
-.download{
- display:inline-block;text-decoration:none;background:#087f43;color:#fff;
- padding:14px 25px;border-radius:14px;font-weight:700
-}
-.note{margin:18px auto 0;max-width:720px;color:#69756f;font-size:14px;line-height:1.8}
-@media(max-width:650px){
- .page{width:calc(100% - 18px);margin:18px auto 35px}
- .header{min-height:145px;padding:24px;border-radius:28px;gap:18px}
- .logo{width:78px;height:78px;border-radius:21px}.logo svg{width:43px;height:43px}
- .header h1{font-size:31px}
- .card{margin-top:20px;padding:18px;border-radius:25px}
- .drop{min-height:250px;border-radius:23px}
- .plus{height:90px;font-size:45px}
- .merge{width:100%;font-size:22px;padding:18px 20px}
-}
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+*{box-sizing:border-box}body{margin:0;background:#f1f5f9;color:#172033;font-family:"Hind Siliguri",Arial,sans-serif}.page{width:min(1080px,calc(100% - 24px));margin:24px auto 45px}.header{height:165px;border-radius:30px;background:linear-gradient(120deg,#1877f2,#2487f7);color:#fff;display:flex;align-items:center;padding:25px 38px;gap:24px;box-shadow:0 14px 35px #1877f226;position:relative;overflow:hidden}.header:after{content:"";position:absolute;width:430px;height:430px;border:70px solid #fff1;border-radius:50%;right:-170px;top:-280px}.logo{width:100px;height:100px;border-radius:26px;background:#fff;display:grid;place-items:center;overflow:hidden;z-index:1;flex:none}.logo img{width:82%;height:82%;object-fit:contain}.brand{z-index:1}.brand h1{font:700 50px Arial,sans-serif;margin:0 0 7px}.brand p{font-size:20px;margin:0}.card{margin-top:24px;background:#fff;border:1px solid #e2e8f0;border-radius:28px;padding:27px;box-shadow:0 12px 35px #17203312}.uploadGrid{display:grid;grid-template-columns:1fr 55px 1fr;align-items:center;gap:10px}.drop{height:220px;border:2px dashed #b6d2f7;border-radius:23px;background:#f8fbff;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;transition:.2s;padding:18px}.drop:hover,.drop.drag{border-color:#1877f2;background:#f1f7ff;transform:translateY(-2px)}.drop.loaded{border-style:solid;border-color:#6aa4ef}.drop input{display:none}.inner{display:flex;align-items:center;flex-direction:column;gap:7px;width:100%}.uploadIcon{width:52px;height:52px;stroke:#1877f2;fill:none;stroke-width:2.8}.dropTitle{font-size:24px;font-weight:600}.sub{font-size:15px;color:#687386}.fileName{font-size:15px;color:#1877f2;font-weight:700;max-width:95%;word-break:break-all}.plus{width:50px;height:50px;border-radius:50%;background:#eaf3ff;color:#1877f2;display:grid;place-items:center;font:400 37px Arial;margin:auto}.actions{text-align:center;margin:24px 0 8px}.merge,.download{border:0;border-radius:14px;background:linear-gradient(135deg,#1877f2,#0d6efd);color:#fff;cursor:pointer;box-shadow:0 9px 22px #1877f238}.merge{padding:14px 42px;font:600 22px "Hind Siliguri"}.merge:hover,.download:hover{filter:brightness(1.05);transform:translateY(-1px)}.merge:disabled{opacity:.5;cursor:not-allowed;transform:none}.status{display:none;margin:16px 0;padding:12px;border-radius:13px;background:#eff6ff;border:1px solid #cfe2ff;color:#24518b;text-align:center}.status.show{display:block}.status.error{background:#fff1f1;border-color:#f1c6c6;color:#9c2626}.bottom{display:grid;grid-template-columns:1.55fr .75fr;gap:18px;margin-top:19px}.preview,.result{border:1px solid #dbe5f1;border-radius:21px;background:#fff;padding:19px}.result{display:none}.result.show{display:block}.sectionTitle{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:21px;font-weight:600;margin-bottom:12px}.tools{display:flex;gap:7px}.tools button,.tools select{height:34px;border:1px solid #d5dfeb;background:#f8fafc;border-radius:8px;color:#344054}.tools button{width:34px;font-size:18px;cursor:pointer}.tools select{padding:0 8px}.previewBox{min-height:170px;border-radius:15px;background:#f7faff;border:1px solid #e3edf9;padding:22px;font-size:28px;line-height:1.8;word-break:break-word;outline:0}.success{font-size:20px;font-weight:600}.download{display:block;text-decoration:none;text-align:center;padding:12px;margin-top:16px;font-weight:600}.small{font-size:14px;color:#687386;margin-top:10px;line-height:1.6}.note{text-align:center;color:#7a8493;font-size:13px;margin-top:17px}
+@media(max-width:800px){.header{height:140px;padding:20px 24px}.logo{width:78px;height:78px;border-radius:21px}.brand h1{font-size:38px}.brand p{font-size:16px}.uploadGrid{grid-template-columns:1fr}.plus{margin:0 auto}.bottom{grid-template-columns:1fr}.drop{height:195px}}
+@media(max-width:500px){.page{width:calc(100% - 14px);margin-top:12px}.header{height:120px;border-radius:23px;padding:17px;gap:14px}.logo{width:63px;height:63px}.brand h1{font-size:28px;margin-bottom:2px}.brand p{font-size:12px}.card{padding:14px;border-radius:21px}.drop{height:180px}.dropTitle{font-size:20px}.plus{width:43px;height:43px;font-size:30px}.merge{width:100%;font-size:20px}.sectionTitle{font-size:18px;align-items:flex-start}.tools{flex-wrap:wrap}.previewBox{font-size:23px}}
 </style>
 </head>
 <body>
 <div class="page">
-  <header class="header">
-    <div class="logo">
-      <svg viewBox="0 0 64 64">
-        <rect x="10" y="13" width="19" height="16" rx="5"/>
-        <rect x="35" y="35" width="19" height="16" rx="5"/>
-        <path d="M29 21h7c5 0 7 3 7 8v6"/>
-        <path d="M25 29v7c0 5 3 7 10 7"/>
-      </svg>
-    </div>
-    <h1>Font Merger</h1>
-    <div class="decor"></div>
-  </header>
-
-  <main class="card">
-    <label class="drop" id="banglaDrop" for="banglaFile">
-      <input id="banglaFile" type="file" accept=".ttf,.otf,font/ttf,font/otf">
-      <div class="inner">
-        <svg class="uploadIcon" viewBox="0 0 64 64">
-          <path d="M32 43V11m0 0L20 23m12-12 12 12"/>
-          <path d="M12 34v17h40V34"/>
-        </svg>
-        <div class="dropTitle">বাংলা ফন্ট সিলেক্ট করুন (TTF/OTF)</div>
-        <div class="fileName" id="banglaName"></div>
-        <div class="fileMeta" id="banglaMeta">বাংলা font-টি base font হিসেবে ব্যবহার হবে</div>
-      </div>
-    </label>
-
-    <div class="plus">+</div>
-
-    <label class="drop" id="englishDrop" for="englishFile">
-      <input id="englishFile" type="file" accept=".ttf,.otf,font/ttf,font/otf">
-      <div class="inner">
-        <svg class="uploadIcon" viewBox="0 0 64 64">
-          <path d="M32 43V11m0 0L20 23m12-12 12 12"/>
-          <path d="M12 34v17h40V34"/>
-        </svg>
-        <div class="dropTitle">ইংরেজি ফন্ট সিলেক্ট করুন (TTF/OTF)</div>
-        <div class="fileName" id="englishName"></div>
-        <div class="fileMeta" id="englishMeta">English/Latin glyph source হিসেবে ব্যবহার হবে</div>
-      </div>
-    </label>
-
-    <div class="actions">
-      <button class="merge" id="mergeBtn" disabled>ফন্ট মার্জ করুন</button>
-    </div>
-
-    <div class="status" id="status"></div>
-
-    <div class="result" id="result">
-      <div id="resultText"></div>
-      <br>
-      <a class="download" id="download" download>মার্জ করা ফন্ট ডাউনলোড করুন</a>
-    </div>
-
-    <div class="note">
-      বাংলা ফন্টটি base font হিসেবে রাখা হয় এবং English/Latin glyph যোগ করার চেষ্টা করা হয়।
-      ফাইল আপনার ডিভাইসেই প্রসেস হবে; কোনো server-এ upload করা হয় না।
-    </div>
-  </main>
-</div>
-
+<header class="header"><div class="logo"><img src="logo.png" alt="Logo"></div><div class="brand"><h1>Font Merger</h1><p>Bangla + English Font Merge Tool</p></div></header>
+<main class="card">
+<section class="uploadGrid">
+<label class="drop" id="banglaDrop" for="banglaFile"><input id="banglaFile" type="file" accept=".ttf,.otf,font/ttf,font/otf"><div class="inner"><svg class="uploadIcon" viewBox="0 0 64 64"><path d="M32 43V11m0 0L20 23m12-12 12 12"/><path d="M12 34v17h40V34"/></svg><div class="dropTitle">বাংলা ফন্ট সিলেক্ট করুন</div><div class="sub">(TTF / OTF)</div><div class="fileName" id="banglaName"></div></div></label>
+<div class="plus">+</div>
+<label class="drop" id="englishDrop" for="englishFile"><input id="englishFile" type="file" accept=".ttf,.otf,font/ttf,font/otf"><div class="inner"><svg class="uploadIcon" viewBox="0 0 64 64"><path d="M32 43V11m0 0L20 23m12-12 12 12"/><path d="M12 34v17h40V34"/></svg><div class="dropTitle">ইংরেজি ফন্ট সিলেক্ট করুন</div><div class="sub">(TTF / OTF)</div><div class="fileName" id="englishName"></div></div></label>
+</section>
+<div class="actions"><button class="merge" id="mergeBtn" disabled>ফন্ট মার্জ করুন</button></div><div class="status" id="status"></div>
+<section class="bottom">
+<div class="preview"><div class="sectionTitle"><span>◉ ফন্ট প্রিভিউ</span><div class="tools"><button id="minus">−</button><button id="plusSize">+</button><select id="weight"><option value="400">Normal</option><option value="600">Semi Bold</option><option value="700">Bold</option></select></div></div><div class="previewBox" id="preview" contenteditable="true" spellcheck="false">বাংলা ও English একসাথে সুন্দরভাবে লিখুন<br>বাংলা ফন্ট প্রিভিউ  ABC abc 123</div></div>
+<div class="result" id="result"><div class="success">✓ মার্জ সফল হয়েছে!</div><div class="small" id="resultText">আপনার ফন্ট প্রস্তুত।</div><a class="download" id="download" download>↓ ফন্ট ডাউনলোড করুন</a><div class="small">ফাইলটি আপনার ডিভাইসেই তৈরি হয়।</div></div>
+</section><div class="note">TTF/OTF ফাইল নির্বাচন করুন। বাংলা ফন্টটি base font হিসেবে ব্যবহার করা হবে।</div>
+</main></div>
 <script>
-let banglaFile=null, englishFile=null, pyodide=null;
-
-const $=id=>document.getElementById(id);
-function setupDrop(drop,input,kind){
-  ['dragenter','dragover'].forEach(e=>drop.addEventListener(e,x=>{x.preventDefault();drop.classList.add('drag')}));
-  ['dragleave','drop'].forEach(e=>drop.addEventListener(e,x=>{x.preventDefault();drop.classList.remove('drag')}));
-  drop.addEventListener('drop',e=>{if(e.dataTransfer.files[0]) setFile(e.dataTransfer.files[0],kind)});
-  input.addEventListener('change',e=>{if(e.target.files[0]) setFile(e.target.files[0],kind)});
-}
-function setFile(file,kind){
-  const ext=file.name.split('.').pop().toLowerCase();
-  if(!['ttf','otf'].includes(ext)){alert('শুধু TTF অথবা OTF ফন্ট নির্বাচন করুন।');return}
-  if(kind==='bangla') banglaFile=file; else englishFile=file;
-  const prefix=kind==='bangla'?'bangla':'english';
-  $(prefix+'Name').textContent=file.name;
-  $(prefix+'Meta').textContent=(file.size/1024/1024).toFixed(2)+' MB • '+ext.toUpperCase();
-  $(prefix+'Drop').classList.add('loaded');
-  $('mergeBtn').disabled=!(banglaFile&&englishFile);
-}
-setupDrop($('banglaDrop'),$('banglaFile'),'bangla');
-setupDrop($('englishDrop'),$('englishFile'),'english');
-
-async function loadEngine(){
-  if(pyodide) return pyodide;
-  setStatus('Merge engine লোড হচ্ছে... প্রথমবার কিছুটা সময় লাগতে পারে।');
-  pyodide=await loadPyodide({indexURL:'https://cdn.jsdelivr.net/pyodide/v0.28.2/full/'});
-  setStatus('FontTools প্রস্তুত করা হচ্ছে...');
-  await pyodide.loadPackage('micropip');
-  await pyodide.runPythonAsync(`
-import micropip
-await micropip.install("fonttools")
-`);
-  return pyodide;
-}
-
-function setStatus(msg,error=false){
-  $('status').textContent=msg;
-  $('status').className='status show'+(error?' error':'');
-}
-
-async function mergeFonts(){
-  if(!banglaFile||!englishFile)return;
-  $('mergeBtn').disabled=true;
-  $('result').classList.remove('show');
-  try{
-    const py=await loadEngine();
-    setStatus('দুইটি font বিশ্লেষণ ও merge করা হচ্ছে...');
-    const b=new Uint8Array(await banglaFile.arrayBuffer());
-    const e=new Uint8Array(await englishFile.arrayBuffer());
-    py.FS.writeFile('/bangla.font',b);
-    py.FS.writeFile('/english.font',e);
-
-    const code=`
-from fontTools.ttLib import TTFont
-from fontTools.merge import Merger
-import os, traceback
-
-def make_font(path):
-    f=TTFont(path, recalcBBoxes=False, recalcTimestamp=False)
-    # Keep OpenType layout tables from the first/base font when possible.
-    return f
-
-base=make_font("/bangla.font")
-latin=make_font("/english.font")
-
-# FontTools Merger uses the first font as the base and merges compatible
-# glyph/cmap/metrics/name/layout information.
-merger=Merger()
-out=merger.merge(["/bangla.font","/english.font"])
-out.save("/merged.ttf")
-`;
-    try{
-      await py.runPythonAsync(code);
-    }catch(err){
-      throw new Error(String(err));
-    }
-    const data=py.FS.readFile('/merged.ttf');
-    const blob=new Blob([data],{type:'font/ttf'});
-    const url=URL.createObjectURL(blob);
-    const base=banglaFile.name.replace(/\.(ttf|otf)$/i,'');
-    const filename=base+'_Bangla-English-Merged.ttf';
-    $('download').href=url;
-    $('download').download=filename;
-    $('resultText').innerHTML='<b>Font merge সফল হয়েছে।</b><br>'+filename;
-    $('result').classList.add('show');
-    setStatus('সফলভাবে merge হয়েছে। Download button-এ চাপুন।');
-  }catch(err){
-    console.error(err);
-    setStatus('Font merge করা যায়নি। '+err.message+'<br><br>বিশেষ করে variable font, CFF/OTF বা incompatible font হলে এমন হতে পারে।',true);
-  }finally{
-    $('mergeBtn').disabled=false;
-  }
-}
-$('mergeBtn').addEventListener('click',mergeFonts);
-</script>
-<script src="https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.js"></script>
-</body>
-</html>
+let banglaFile=null,englishFile=null,pyodide=null,mergedURL=null,fontSize=28;const $=id=>document.getElementById(id);
+function setup(drop,input,kind){['dragenter','dragover'].forEach(e=>drop.addEventListener(e,x=>{x.preventDefault();drop.classList.add('drag')}));['dragleave','drop'].forEach(e=>drop.addEventListener(e,x=>{x.preventDefault();drop.classList.remove('drag')}));drop.addEventListener('drop',e=>{if(e.dataTransfer.files[0])setFile(e.dataTransfer.files[0],kind)});input.addEventListener('change',e=>{if(e.target.files[0])setFile(e.target.files[0],kind)})}
+function setFile(file,kind){if(!/\.(ttf|otf)$/i.test(file.name)){alert('শুধু TTF অথবা OTF ফন্ট নির্বাচন করুন।');return}if(kind==='bangla')banglaFile=file;else englishFile=file;$(kind+'Name').textContent=file.name;$(kind+'Drop').classList.add('loaded');$('mergeBtn').disabled=!(banglaFile&&englishFile)}
+setup($('banglaDrop'),$('banglaFile'),'bangla');setup($('englishDrop'),$('englishFile'),'english');
+function status(t,err=false){$('status').innerHTML=t;$('status').className='status show'+(err?' error':'')}
+async function engine(){if(pyodide)return pyodide;status('Merge engine লোড হচ্ছে... প্রথমবার কিছুটা সময় লাগতে পারে।');pyodide=await loadPyodide({indexURL:'https://cdn.jsdelivr.net/pyodide/v0.28.2/full/'});await pyodide.loadPackage('micropip');await pyodide.runPythonAsync('import micropip\nawait micropip.install("fonttools")');return pyodide}
+async function mergeFonts(){$('mergeBtn').disabled=true;$('result').classList.remove('show');try{const py=await engine();status('Font merge করা হচ্ছে...');py.FS.writeFile('/bangla.ttf',new Uint8Array(await banglaFile.arrayBuffer()));py.FS.writeFile('/english.ttf',new Uint8Array(await englishFile.arrayBuffer()));await py.runPythonAsync('from fontTools.merge import Merger\nm=Merger()\nf=m.merge(["/bangla.ttf","/english.ttf"])\nf.save("/merged.ttf")');const data=py.FS.readFile('/merged.ttf');const blob=new Blob([data],{type:'font/ttf'});if(mergedURL)URL.revokeObjectURL(mergedURL);mergedURL=URL.createObjectURL(blob);const name=banglaFile.name.replace(/\.(ttf|otf)$/i,'')+'_Bangla-English-Merged.ttf';$('download').href=mergedURL;$('download').download=name;$('resultText').textContent=name;$('result').classList.add('show');status('✓ Merge সফল হয়েছে। Download button ব্যবহার করুন।');loadPreview(mergedURL)}catch(e){console.error(e);status('Merge করা যায়নি। '+e.message,true)}$('mergeBtn').disabled=false}
+async function loadPreview(url){try{const face=new FontFace('MergedPreview','url('+url+')');await face.load();document.fonts.add(face);$('preview').style.fontFamily='MergedPreview'}catch(e){console.warn(e)}}
+$('mergeBtn').onclick=mergeFonts;$('minus').onclick=()=>{$('preview').style.fontSize=(fontSize=Math.max(12,fontSize-2))+'px'};$('plusSize').onclick=()=>{$('preview').style.fontSize=(fontSize=Math.min(72,fontSize+2))+'px'};$('weight').onchange=e=>$('preview').style.fontWeight=e.target.value;
+</script><script src="https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.js"></script>
+</body></html>
